@@ -5,6 +5,9 @@
  */
 package trabajopractico4.conversor;
 
+import java.util.InputMismatchException;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Usuario
@@ -27,21 +30,106 @@ public class Conversor extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        JDPfondo = new javax.swing.JDesktopPane();
+        JIFcomponente = new javax.swing.JInternalFrame();
+        JLcelcius = new javax.swing.JLabel();
+        JTFcelciusText = new javax.swing.JTextField();
+        JBconvertir = new javax.swing.JButton();
+        JLsmn = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        JIFcomponente.setVisible(true);
+
+        JLcelcius.setFont(new java.awt.Font("Microsoft JhengHei", 1, 18)); // NOI18N
+        JLcelcius.setText("Celcius");
+
+        JBconvertir.setText("Convertir!");
+        JBconvertir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBconvertirActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout JIFcomponenteLayout = new javax.swing.GroupLayout(JIFcomponente.getContentPane());
+        JIFcomponente.getContentPane().setLayout(JIFcomponenteLayout);
+        JIFcomponenteLayout.setHorizontalGroup(
+            JIFcomponenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JIFcomponenteLayout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addGroup(JIFcomponenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(JBconvertir, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
+                    .addGroup(JIFcomponenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(JTFcelciusText)
+                        .addComponent(JLcelcius, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)))
+                .addContainerGap(409, Short.MAX_VALUE))
+        );
+        JIFcomponenteLayout.setVerticalGroup(
+            JIFcomponenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JIFcomponenteLayout.createSequentialGroup()
+                .addGap(83, 83, 83)
+                .addComponent(JLcelcius, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(JTFcelciusText, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                .addComponent(JBconvertir, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(83, 83, 83))
+        );
+
+        JLsmn.setText("SIMULADOR DE SERVICIO METEOROLOGICO NACIONAL ");
+
+        JDPfondo.setLayer(JIFcomponente, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        JDPfondo.setLayer(JLsmn, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout JDPfondoLayout = new javax.swing.GroupLayout(JDPfondo);
+        JDPfondo.setLayout(JDPfondoLayout);
+        JDPfondoLayout.setHorizontalGroup(
+            JDPfondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JDPfondoLayout.createSequentialGroup()
+                .addGroup(JDPfondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(JDPfondoLayout.createSequentialGroup()
+                        .addGap(133, 133, 133)
+                        .addComponent(JIFcomponente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(JDPfondoLayout.createSequentialGroup()
+                        .addGap(249, 249, 249)
+                        .addComponent(JLsmn, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(154, Short.MAX_VALUE))
+        );
+        JDPfondoLayout.setVerticalGroup(
+            JDPfondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JDPfondoLayout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addComponent(JLsmn, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(JIFcomponente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(JDPfondo)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(JDPfondo)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void JBconvertirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBconvertirActionPerformed
+        // TODO add your handling code here:
+        try{
+           
+            double f = Double.valueOf(JTFcelciusText.getText())*1.8+32;
+            JOptionPane.showMessageDialog(this, "hola"+f);
+            
+        }catch(InputMismatchException e){
+            
+        }
+    }//GEN-LAST:event_JBconvertirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +167,11 @@ public class Conversor extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton JBconvertir;
+    private javax.swing.JDesktopPane JDPfondo;
+    private javax.swing.JInternalFrame JIFcomponente;
+    private javax.swing.JLabel JLcelcius;
+    private javax.swing.JLabel JLsmn;
+    private javax.swing.JTextField JTFcelciusText;
     // End of variables declaration//GEN-END:variables
 }
