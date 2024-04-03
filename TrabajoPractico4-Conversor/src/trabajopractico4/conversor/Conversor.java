@@ -126,8 +126,10 @@ public class Conversor extends javax.swing.JFrame {
             double f = Double.valueOf(JTFcelciusText.getText())*1.8+32;
             JOptionPane.showMessageDialog(this, "hola"+f);
             
-        }catch(InputMismatchException e){
-            
+        }catch(NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "Ingrese un valor numérico válido.");
+            JTFcelciusText.setText("");
+       
         }
     }//GEN-LAST:event_JBconvertirActionPerformed
 

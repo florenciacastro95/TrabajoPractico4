@@ -78,10 +78,8 @@
                       <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="JBconvertir" pref="117" max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="JTFcelciusText" max="32767" attributes="0"/>
-                              <Component id="JLcelcius" pref="117" max="32767" attributes="0"/>
-                          </Group>
+                          <Component id="JTFcelciusText" max="32767" attributes="0"/>
+                          <Component id="JLcelcius" pref="117" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace pref="409" max="32767" attributes="0"/>
                   </Group>
